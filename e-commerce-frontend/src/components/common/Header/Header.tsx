@@ -10,7 +10,7 @@ const Header = () => {
         <header>
             <div className={styles.headerContainer}>
                 <h1 className={styles.headerLogo}>
-                    <span>our</span> <Badge bg="info">Ecom</Badge>
+                    <span>Our</span> <Badge bg="info">eCom</Badge>
                 </h1>
                 <div className="d-flex flex-row">
                 <HeaderLeftBar />

@@ -1,4 +1,4 @@
-import { TProducts } from "@customTypes/products";
+import { TProducts } from "@customTypes/index";
 import styles from "./styles.module.css"
 
 type TCartSubtotalPriceProps = {products:TProducts[]}

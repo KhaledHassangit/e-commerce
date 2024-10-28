@@ -1,8 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { LikeActionToggle } from './LikeAction';
 import actGetWishlist from './actGetWishlist';
-import { TLoading } from '@customTypes/shared';
-import { TProducts } from '@customTypes/products';
+import { TLoading ,TProducts } from '@customTypes/index';
 
 interface IWishlistState {
     wishlistIds:number[];
@@ -38,7 +37,6 @@ const WishlistSlice = createSlice({
             } else{
                 state.wishlistIds= state.wishlistIds.filter((id)=> id !== action.payload.id)
                 state.productsInfo= state.productsInfo.filter((prod)=> prod.id !== action.payload.id)
-
             }
         });
         builder.addCase(LikeActionToggle.rejected, (state,action) => {

@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import getCategories from "./thunk/actGetCategories";
-import { TLoading } from "@customTypes/shared";
-import { TCategory } from "@customTypes/category";
+import { TLoading  ,TCategory, isString} from "@customTypes/index";
 
 interface ICategoriesState {
     records: TCategory[]
@@ -30,11 +29,13 @@ const categories = createSlice({
         })
         builder.addCase(getCategories.fulfilled,(state,action) => {
             state.loading = "succeeded"
-            state.records = action.payload
+            state.records = action.payload ?? []
         })
         builder.addCase(getCategories.rejected,(state,action) => {
-            state.loading = "failed"
-            state.error = action.payload as string;  
+            state.loading = "failed";
+            if(isString(action.payload)){
+                state.error = action.payload 
+            }
         })
     }
 })

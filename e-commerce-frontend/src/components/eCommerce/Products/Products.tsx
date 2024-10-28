@@ -1,7 +1,7 @@
 import { memo, useEffect, useState } from "react";
 import { Button, Spinner } from "react-bootstrap";
 import styles from "./styles.module.css";
-import { TProducts } from "@customTypes/products";
+import { TProducts } from "@customTypes/index";
 import { useAppDispatch } from "@store/hooks";
 import { addToCart } from "@store/cart/cartSlice";
 import Like from "@assets/svg/like.svg?react"

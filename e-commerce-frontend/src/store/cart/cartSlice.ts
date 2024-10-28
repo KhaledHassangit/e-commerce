@@ -1,5 +1,4 @@
-import { TProducts } from '@customTypes/products';
-import { TLoading } from '@customTypes/shared';
+import { TProducts ,TLoading } from '@customTypes/index';
 import { createSlice } from "@reduxjs/toolkit";
 import actGetProductsCartItems from './act/actGetProductsCartItems';
 

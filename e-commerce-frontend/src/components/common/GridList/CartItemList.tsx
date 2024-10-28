@@ -1,5 +1,5 @@
 import CartItem from "@components/eCommerce/Cart/Cartitem"
-import { TProducts } from "@customTypes/products"
+import { TProducts } from "@customTypes/index"
 
 
 
