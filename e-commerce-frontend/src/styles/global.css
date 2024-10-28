@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+
+}
+
+.notFound {
+    padding-top: 15%;
+    text-align: center;
+}
+
+.notFound h1 {
+    font-size: 130px;
+}
+
+.notFound p {
+    font-size: 50px;
+}
+
+
+/* 
+.active{
+    text-decoration: underline;
+} */
