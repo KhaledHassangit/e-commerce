@@ -1,18 +1,29 @@
 import { TLoading } from "@customTypes/index"
+import CategorySkeleton from "../skeletons/CategorySkeleton"
+import ProductSkeleton from "../skeletons/ProductSkeleton"
+import CartSkeleton from "../skeletons/CartSkeleton"
+import LottieHandler from "@components/common/Lottie/LottierHandler"
 
+const skeletonsType = {
+    category:CategorySkeleton,
+    product:ProductSkeleton,
+    cart:CartSkeleton,
+}
 
 type LoadingProps  = {
     status : TLoading;
     error: string | null;
-    children:React.ReactNode
+    children:React.ReactNode;
+    type?:keyof typeof skeletonsType ;
 }
 
-const Loading = ({status,error,children}:LoadingProps) => {
+const Loading = ({status,error,children, type = "category"}:LoadingProps) => {
+    const Component = skeletonsType[type] 
     if(status === "pending"){
-        return <p>loading ...</p>
+        return <Component/>
     }
     if(status === "failed"){
-        return <p>{error}</p>
+        return <LottieHandler type="error" message={error as string}/>
     }
 
     return (

@@ -13,6 +13,7 @@ const Wishlist = () => {
             <SectionTitle  title={`Wishlist`} />
             <Loading status={loading} error={error}>
                 <GridList<TProducts>
+                     emptyMessage="Your Wishlist Is Empty "
                     records={records}
                     renderItem={(item) => <Product {...item} />} />
             </Loading>

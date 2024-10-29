@@ -10,8 +10,10 @@ const Categories = () => {
     return (
         <Container>
             <SectionTitle  title={`Categories`} />
-            <Loading status={loading} error={error}>
-                <GridList records={records} renderItem={(cat) => <Category  {...cat} />} />
+            <Loading status={loading} error={error} type="category" >
+                <GridList
+                    emptyMessage="There Are No Products Yet"
+                    records={records} renderItem={(cat) => <Category  {...cat} />} />
             </Loading>
         </Container>
     )

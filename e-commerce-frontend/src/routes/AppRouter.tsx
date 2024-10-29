@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const MianLayout = lazy(() => import("@layouts/MianLayout/MianLayout"));
 const Home = lazy(() => import("@pages/Home"));
@@ -7,33 +7,34 @@ const Products = lazy(() => import("@pages/Products"));
 const AboutUs = lazy(() => import("@pages/AboutUs"));
 const Login = lazy(() => import("@pages/Login"));
 const Register = lazy(() => import("@pages/Register"));
-const Error = lazy(() => import("@pages/Error"));
 const Cart = lazy(() => import("@pages/Cart"));
 const Wishlist = lazy(() => import("@pages/Wishlist"));
+import Error from "@pages/Error";
+import PageSuspenseFallback from "@components/feedback/PageSuspense/Suspense";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: 
-        <Suspense fallback="loading please wait ...">
-        <MianLayout />
-        </Suspense>,
+        <PageSuspenseFallback>
+            <MianLayout />
+        </PageSuspenseFallback>,
         errorElement: <Error />,
         children: [
             {
                 index: true,
                 element: (
-                    <Suspense fallback="loading please wait ...">
+                    <PageSuspenseFallback>
                         <Home />
-                    </Suspense>
+                    </PageSuspenseFallback>
                 )
             },
             {
                 path: "categories/products/:prefix",
                 element: (
-                    <Suspense fallback="loading please wait ...">
+                    <PageSuspenseFallback>
                         <Products />
-                    </Suspense>
+                    </PageSuspenseFallback>
                 ),
                 loader: ({ params }) => {
                     if (
@@ -51,49 +52,49 @@ const router = createBrowserRouter([
             {
                 path: "categories",
                 element: (
-                    <Suspense fallback="loading please wait ...">
+                    <PageSuspenseFallback>
                         <Categories />
-                    </Suspense>
+                    </PageSuspenseFallback>
                 )
             },
             {
                 path: "about-us",
                 element: (
-                    <Suspense fallback="loading please wait ...">
+                    <PageSuspenseFallback>
                         <AboutUs />
-                    </Suspense>
+                    </PageSuspenseFallback>
                 )
             },
             {
                 path: "login",
                 element: (
-                    <Suspense fallback="loading please wait ...">
+                    <PageSuspenseFallback>
                         <Login />
-                    </Suspense>
+                    </PageSuspenseFallback>
                 )
             },
             {
                 path: "register",
                 element: (
-                    <Suspense fallback="loading please wait ...">
+                    <PageSuspenseFallback>
                         <Register />
-                    </Suspense>
+                    </PageSuspenseFallback>
                 )
             },
             {
                 path: "cart",
                 element: (
-                    <Suspense fallback="loading please wait ...">
+                    <PageSuspenseFallback>
                         <Cart />
-                    </Suspense>
+                    </PageSuspenseFallback>
                 )
             },
             {
                 path: "wishlist",
                 element: (
-                    <Suspense fallback="loading please wait ...">
+                    <PageSuspenseFallback>
                         <Wishlist />
-                    </Suspense>
+                    </PageSuspenseFallback>
                 )
             }
         ]

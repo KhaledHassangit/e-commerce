@@ -13,13 +13,12 @@ const { product, productImg, wishlistBtn } = styles;
 const Product = memo(({ id, title, price, img, max, quanitiy, isLiked }: TProducts) => {
 
     const RemainQuantity = max - (quanitiy ?? 0)
-
     const QuantityReachedToMax = RemainQuantity <= 0 ? true : false
 
     const [isDisabled, setIsDisabled] = useState(false)
 
     const [isLoading, setIsLoading] = useState(false)
-
+    console.log(QuantityReachedToMax)
     const dispatch = useAppDispatch()
 
     useEffect(() => {

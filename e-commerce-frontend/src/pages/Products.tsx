@@ -14,9 +14,10 @@ const Products = memo(() => {
         <>
         <Container>
             <SectionTitle title={`${productPrefix?.toUpperCase()} Products`} />
-            <Loading status={loading} error={error}>
+            <Loading status={loading} error={error}  type="product" >
                 <GridList<TProducts>
                     records={ProductInfo}
+                    emptyMessage="There Are No Categories Yet"
                     renderItem={(item) => <Product {...item} />} />
             </Loading>
         </Container>

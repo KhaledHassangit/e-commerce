@@ -19,7 +19,9 @@ body {
     font-size: 50px;
 }
 
-
+.mt-12{
+    margin-top: 12%;
+}
 /* 
 .active{
     text-decoration: underline;

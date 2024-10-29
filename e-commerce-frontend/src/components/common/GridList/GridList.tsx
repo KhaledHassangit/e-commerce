@@ -1,14 +1,16 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap';
+import LottieHandler from '../Lottie/LottierHandler';
 
 
 type GridListProps<T> = {
     records: T[];
     renderItem: (record: T) => React.ReactNode
+    emptyMessage:string
 }
 
 type HasId = {id?:number}
-const GridList = <T extends HasId>({ records, renderItem }: GridListProps<T>) => {
+const GridList = <T extends HasId>({ records, renderItem,emptyMessage}: GridListProps<T>) => {
 
     const allItems = records.length > 0 ? records.map((record => {
         return (
@@ -16,7 +18,7 @@ const GridList = <T extends HasId>({ records, renderItem }: GridListProps<T>) =>
                 {renderItem(record)}
             </Col>
         )
-    })) : "No Items Are Available Yet"
+    })) : <LottieHandler type="empty" message={emptyMessage}/>
 
     return (
         <Row>
