@@ -28,6 +28,7 @@
       "@utilities/*": ["src/utilities/*"],
       "@services/*": ["src/services/*"],
       "@customTypes/*": ["src/types/*"],
+      "@validations/*": ["src/Validations/*"],
     },
     /* Linting */
     "strict": true,

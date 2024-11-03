@@ -18,6 +18,8 @@ export default defineConfig({
       "@utilities": path.resolve(__dirname,"./src/utilities"),
       "@services": path.resolve(__dirname,"./src/services"),
       "@customTypes": path.resolve(__dirname,"./src/types"),
+      "@validations": path.resolve(__dirname,"./src/Validations"),
+      
     },
   },
   plugins: [react(),svgr()],

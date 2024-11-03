@@ -68,7 +68,7 @@ const Product = memo(({ id, title, price, img, max, quanitiy, isLiked }: TProduc
             </div>
             <h2>{title}</h2>
             <h3>{price.toFixed(2)} EGP </h3>
-            <span>{QuantityReachedToMax ? "You reach to the limit" : `${RemainQuantity} items left to add`}</span>
+            {/* <span>{QuantityReachedToMax ? "You reach to the limit" : `${RemainQuantity} items left to add`}</span> */}
             <Button disabled={isDisabled || QuantityReachedToMax} onClick={addToCartHandler} variant="info" style={{ color: "white" }}>
                 {isDisabled ? <Spinner animation="border" size="sm" /> : "Add to cart"}
             </Button>
