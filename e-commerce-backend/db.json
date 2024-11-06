@@ -1,8 +1,33 @@
 {
-  "users":[{
-    "email":"khaledhassan199919@gmail.com"
-  }
-
+  "users": [
+    {
+      "email": "Khaledhassan199919@gmail.com",
+      "password": "$2a$10$ZUwkUHDn.La/EhBEhoPyHexeAQB9HX0brNuUeAEU00JX.TQQnZsM.",
+      "firstName": "Khaled",
+      "lastName": "Hassan",
+      "id": 1
+    },
+    {
+      "email": "khaled.santoos40@yahoo.com",
+      "password": "$2a$10$1r1s4WunBPUpcHuCHiBf8uRUdvwFJ7vARQiuqa3.45h0QawC4y6iS",
+      "firstName": "Khaled",
+      "lastName": "Hassan",
+      "id": 2
+    },
+    {
+      "email": "khaled.santoos@yahoo.com",
+      "password": "$2a$10$NRUgFecijTDqyYOqBaTRueHtVS0sqGK5FLHodl/JZMusUxA6f7tJ2",
+      "firstName": "Khaled",
+      "lastName": "Hassan",
+      "id": 3
+    },
+    {
+      "email": "Khaledhassan1999@gmail.com",
+      "password": "$2a$10$SfIlj.Sktmaqy2SRJkV8XO90x6SbJsELFbICrOtDCySqc7dtNbGUG",
+      "firstName": "Khaled",
+      "lastName": "Hassan",
+      "id": 4
+    }
   ],
   "category": [
     {

@@ -1,20 +1,19 @@
-import { useForm, SubmitHandler } from "react-hook-form";
-import { Button, Form, Col, Row } from 'react-bootstrap';
+import { Button, Form, Col, Row, Spinner } from 'react-bootstrap';
 import SectionTitle from '@components/common/SectionTitle/SectionTitle';
-import { zodResolver } from "@hookform/resolvers/zod";
-import { validationSchema, TSignUp } from "@validations/SignUpSchema";
 import Input from "@components/common/Forms/Input";
+import { validationSchema, TSignUp } from "@validations/SignUpSchema";
 import useCheckEmailAvailability from "@hooks/UseCheckEmail";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import UseRegister from "@hooks/UseRegister";
 
 const Register = () => {
+    const { error, loading, submitForm } = UseRegister();
+
     const { register, handleSubmit, getFieldState, trigger, formState: { errors } } = useForm<TSignUp>({
         mode: "onBlur",
         resolver: zodResolver(validationSchema)
     });
-
-    const submitForm: SubmitHandler<TSignUp> = (data) => {
-        console.log(data);
-    };
 
     const { emailAvailabilityStatus, enteredEmail, checkEmailAvailability, resetCheckEmailAvailability } =
         useCheckEmailAvailability()
@@ -90,13 +89,19 @@ const Register = () => {
                             register={register}
                             error={errors.confirmPassword?.message} />
 
-                        <Button 
-                        style={{ color: "white" }} 
-                        variant="info" type="submit" 
-                        className="my-3 px-5"
-                        disabled={emailAvailabilityStatus === "checking" ? true : false}>
-                            Submit
+                        <Button
+                            style={{ color: "white" }}
+                            variant="info"
+                            type="submit"
+                            className="my-3 px-5"
+                            disabled={emailAvailabilityStatus === "checking" || loading === "pending"}>
+                            {loading === "pending" ? (
+                                <Spinner animation="border" size="sm" />
+                            ) : (
+                                "Submit"
+                            )}
                         </Button>
+                        {error && <p style={{ color: "#DC3545", marginTop: "10px" }}>{error}</p>}
                     </Form>
                 </Col>
             </Row>
