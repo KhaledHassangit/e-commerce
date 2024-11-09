@@ -3,11 +3,13 @@ import CategorySkeleton from "../skeletons/CategorySkeleton"
 import ProductSkeleton from "../skeletons/ProductSkeleton"
 import CartSkeleton from "../skeletons/CartSkeleton"
 import LottieHandler from "@components/common/Lottie/LottierHandler"
+import TableSkeleton from "../skeletons/TableSkeleton"
 
 const skeletonsType = {
     category:CategorySkeleton,
     product:ProductSkeleton,
     cart:CartSkeleton,
+    table: TableSkeleton,
 }
 
 type LoadingProps  = {
@@ -15,6 +17,7 @@ type LoadingProps  = {
     error: string | null;
     children:React.ReactNode;
     type?:keyof typeof skeletonsType ;
+
 }
 
 const Loading = ({status,error,children, type = "category"}:LoadingProps) => {

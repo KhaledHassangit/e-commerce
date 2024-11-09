@@ -3,7 +3,7 @@ import empty from "@assets/animations/empty.json"
 import notFound  from "@assets/animations/notfound.json"
 import loading from "@assets/animations/loading.json"
 import error from "@assets/animations/error.json"
-
+import success from "@assets/animations/success.json"
 
 
 const lottieFilesMap = {
@@ -11,6 +11,7 @@ const lottieFilesMap = {
     empty,
     loading,
     error,
+    success,
 }; 
 type LottieHandlerProps = {
     type: keyof typeof lottieFilesMap;

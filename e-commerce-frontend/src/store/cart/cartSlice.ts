@@ -29,6 +29,7 @@ const cartSlice = createSlice({
                 state.items[id] = 1
             }
         }, 
+
         cartItemsChangeQuantity :(state,action) =>{
             state.items[action.payload.id] = action.payload.quantity
         },
@@ -40,7 +41,12 @@ const cartSlice = createSlice({
         },
         cleanCartproductsInfo:(state) => {
             state.productsInfo = []
+        },
+        clearCartAfterPlaceOrder:(state)=>{
+            state.items={}
+            state.productsInfo = []
         }
+
     },
     extraReducers: (builder) => {
         builder.addCase(actGetProductsCartItems.pending,(state)=>{
@@ -61,5 +67,6 @@ const cartSlice = createSlice({
 
 })
 
-export const { addToCart,cartItemsChangeQuantity ,cartItemsRemove,cleanCartproductsInfo  } = cartSlice.actions;
+export const { addToCart,cartItemsChangeQuantity ,cartItemsRemove,cleanCartproductsInfo ,clearCartAfterPlaceOrder } = cartSlice.actions;
+
 export default cartSlice.reducer

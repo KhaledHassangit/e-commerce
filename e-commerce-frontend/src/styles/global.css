@@ -22,9 +22,29 @@ body {
 .mt-12{
     margin-top: 12%;
 }
-/* 
-.active{
-    text-decoration: underline;
-} */
+.home-page .hero-section {
+    background-color: rgba(var(--bs-dark-rgb), 0.8);
+    color: #fff;
+    border-radius: 10px;
+}
 
+.home-page .hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
 
+.home-page .hero-subtitle {
+    font-size: 1.2rem;
+}
+
+.home-page .text-info {
+    color: rgba(var(--bs-info-rgb), 1);
+}
+.about-us-page h1, .about-us-page h2 {
+    color: rgba(var(--bs-dark-rgb), 1);
+}
+
+.about-us-page p {
+    color: rgba(var(--bs-dark-rgb), 0.7);
+    line-height: 1.6;
+}

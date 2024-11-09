@@ -2,17 +2,21 @@ import { useCallback, useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "@store/hooks"
 import actGetProductsCartItems from "@store/cart/act/actGetProductsCartItems"
 import { cartItemsChangeQuantity, cartItemsRemove, cleanCartproductsInfo } from "@store/cart/cartSlice"
+import { resetOrderStatus } from "@store/orders/ordersSlice"
 
 const UseCart = () => {
 
     const dispatch = useAppDispatch()
     const { items, productsInfo, loading, error } = useAppSelector((state) => state.cart)
-
+    const userAccessToken = useAppSelector(state => state.auth.accessToken)
+    const placeOrderStatus = useAppSelector(state => state.orders.loading)
+    
     useEffect(() => {
         const promise = dispatch(actGetProductsCartItems())
         return() => {
             promise.abort(  )
             dispatch(cleanCartproductsInfo())
+            dispatch(resetOrderStatus())
         }
     }, [dispatch])
 
@@ -31,7 +35,7 @@ const UseCart = () => {
         [dispatch]
     )
 
-    return [products,loading,error,changeQuanitiyHandler,removeItemHandler]
+    return [products,loading,error,changeQuanitiyHandler,removeItemHandler,userAccessToken,placeOrderStatus]
 }
 
 export default UseCart

@@ -2,7 +2,8 @@ import { Form, Button } from "react-bootstrap";
 import styles from "./styles.module.css";
 import { TProducts } from "@customTypes/index";
 import { memo } from "react";
-const { cartItem, product, productImg, productInfo, cartItemSelection } = styles;
+import ProductDetails from "../ProductDetails/ProductDetails";
+const { cartItem , cartItemSelection } = styles;
 
 type CartItemsProps = TProducts & 
 {changeQuanitiyHandler:(id:number,quantity:number) => void}
@@ -22,25 +23,14 @@ const CartItem = memo(({id,title,price,img,max,quanitiy,changeQuanitiyHandler,re
 
     return (
         <div className={cartItem}>
-            <div className={product}>
-                <div className={productImg}>
-                    <img
-                        src={img}
-                        alt={title}
-                    />
-                </div>
-                <div className={productInfo}>
-                    <h2>{title}</h2>
-                    <h3>{price.toFixed(2)} EGP</h3>
-                    <Button
+            <ProductDetails title={title} img={img} price={price} direction="column">
+            <Button
                         variant="secondary"
-                        style={{ color: "white",width:"100px" }}
-                        className="mt-auto"onClick={()=> removeItemHandler(id)}>
+                        style={{ color: "white",width:"100px"}}
+                        className="mt-auto "onClick={()=> removeItemHandler(id)}>
                         Remove
                     </Button>
-                </div>
-            </div>
-
+            </ProductDetails>
             <div className={cartItemSelection}>
                 <span className="d-block mb-1">Quantity</span>
                 <Form.Select onChange={changeQuanitiy} value={quanitiy} aria-label="Default select example">

@@ -129,29 +129,136 @@
   ],
   "wishlist": [
     {
-      "userId": "1",
+      "userId": 1,
       "productId": 1,
       "id": 3
     },
     {
-      "userId": "1",
+      "userId": 1,
       "productId": 3,
       "id": 4
     },
     {
-      "userId": "1",
+      "userId": 1,
       "productId": 2,
       "id": 7
     },
     {
-      "userId": "1",
+      "userId": 1,
       "productId": 5,
       "id": 9
     },
     {
-      "userId": "1",
+      "userId": 1,
       "productId": 4,
       "id": 10
+    }
+  ],
+  "orders": [
+    {
+      "userId": 1,
+      "items": [
+        {
+          "id": 17,
+          "title": "Regular Fit football shirt",
+          "price": 449,
+          "quantity": 1,
+          "img": "https://cdn-eu.dynamicyield.com/api/9876644/images/1dda9ae79a671__h_m-w40-06102022-7416b-1x1.jpg"
+        }
+      ],
+      "subtotal": 449,
+      "id": 1
+    },
+    {
+      "userId": 4,
+      "items": [
+        {
+          "id": 2,
+          "title": "Regular Fit Jersey top",
+          "price": 229,
+          "quantity": 1,
+          "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg"
+        }
+      ],
+      "subtotal": 229,
+      "id": 2
+    },
+    {
+      "userId": 4,
+      "items": [
+        {
+          "id": 2,
+          "title": "Regular Fit Jersey top",
+          "price": 229,
+          "quantity": 1,
+          "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg"
+        }
+      ],
+      "subtotal": 229,
+      "id": 3
+    },
+    {
+      "userId": 4,
+      "items": [
+        {
+          "id": 2,
+          "title": "Regular Fit Jersey top",
+          "price": 229,
+          "quantity": 1,
+          "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg"
+        }
+      ],
+      "subtotal": 229,
+      "id": 4
+    },
+    {
+      "userId": 4,
+      "items": [
+        {
+          "id": 2,
+          "title": "Regular Fit Jersey top",
+          "price": 229,
+          "quantity": 1,
+          "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg"
+        }
+      ],
+      "subtotal": 229,
+      "id": 5
+    },
+    {
+      "userId": 4,
+      "items": [
+        {
+          "id": 2,
+          "title": "Regular Fit Jersey top",
+          "price": 229,
+          "quantity": 1,
+          "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg"
+        }
+      ],
+      "subtotal": 229,
+      "id": 6
+    },
+    {
+      "userId": 4,
+      "items": [
+        {
+          "id": 4,
+          "title": "Cotton t-shirt",
+          "price": 100,
+          "quantity": 1,
+          "img": "https://eg.hm.com/assets/styles/HNM/13650519/6cc34f51caee1d6cfe776b933d667075fa30d90d/2/image-thumb__2888777__product_listing/16c27492b022ac2eef03853f85d5b279a29ebeed.jpg"
+        },
+        {
+          "id": 5,
+          "title": "Sweatshirt shorts",
+          "price": 300,
+          "quantity": 1,
+          "img": "https://eg.hm.com/assets/styles/HNM/12652575/3e316aab8ce1b596545d144d0efd362975b3856f/2/image-thumb__1998684__product_listing/48756e509aa05341e4a618ba4c1b0a5ce24ebcae.jpg"
+        }
+      ],
+      "subtotal": 400,
+      "id": 7
     }
   ]
 }

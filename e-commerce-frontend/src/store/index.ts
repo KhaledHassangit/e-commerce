@@ -6,6 +6,7 @@ import products from "./Products/ProductsSlice"
 import cart from './cart/cartSlice'
 import wishlist from "./wishlist/wishlistSlice"
 import auth from './Auth/authslice'
+import orders from "./orders/ordersSlice"
 
 
 const RootPersistConfig = {
@@ -35,6 +36,7 @@ const RootReducer = combineReducers(
         cart: persistReducer(cartPersistConfig, cart),
         wishlist,
         auth:persistReducer(authPresistConfig, auth),
+        orders
     }
 )
 const persistedReducer = persistReducer(RootPersistConfig,RootReducer)
